@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO LIST</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Lista de tareas</h1>
+        <div class="input-container">
+
+            <div class="data-add">
+                <input class="to-do-input" placeholder="¿Algo por hacer?">
+                <input type="date" class="date-input">
+
+                <select class="tag-input" id="tagSelector" onchange="showCustomInput()">
+                    <option value="Trabajo">Trabajo</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Urgente">Urgente</option>
+                    <option value="custom">personalizado</option>
+                </select>
+                <input type="text" id="customTagInput" class="custom-tag-input" placeholder="Etiqueta personalizada" style="display:none;">
+            </div>
+
+
+            <button class="add-button" onclick="agregarTarea()">
+                <div class="sign">+</div>
+                <div class="text">Agregar</div>
+            </button>
+
+        </div>
+        <div class="filters">
+            <button class="filter" data-estado="completas">Completas</button>
+            <button class="filter" data-estado="pendientes">Pendientes</button>
+            <button class="delete-all" onclick="eliminarTodasLasTareas()">Borrar todo</button>
+            <div class="completed-indicator" style="display:none;">Tareas Completas: <span id="completedCount">0</span>
+            </div>
+            <div class="incomplete-indicator" style="display:none;">Tareas Pendientes: <span
+                    id="incompleteCount">0</span></div>
+        </div>
+        <div class="to-dos-container">
+            <ul class="to-dos"></ul>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

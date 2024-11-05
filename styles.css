@@ -1,0 +1,341 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(image/fondo.jpeg) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  width: 400px;
+  height: auto;
+  min-height: 400px;
+  padding: 30px;
+  background: transparent;
+  border: 2px solid #663D65;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+  position: relative;
+}
+
+h1 {
+  color: #eee;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.input-container {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #603056;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.data-add {
+  width: 200px;
+  margin: 0;
+  overflow: auto;
+  flex: 1;
+}
+
+.to-do-input {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 2px solid #603056;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+  background: transparent;
+  padding: 10px;
+  color: #ffffff;
+  outline: none;
+}
+
+.date-input {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 2px solid #603056;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+  background: transparent;
+  padding: 10px;
+  color: #ffffff;
+  outline: none;
+}
+
+.tag-input {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 2px solid #603056;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+  background: transparent;
+  padding: 10px;
+  color: #ffffff;
+  outline: none;
+}
+
+.custom-tag-input {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 2px solid #603056;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+  background: transparent;
+  padding: 10px;
+  color: #ffffff;
+  outline: none;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.add-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 35px;
+  height: 35px;
+  border-radius: calc(35px/2);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.sign {
+  width: 100%;
+  font-size: 2.0em;
+  color: rgb(255, 255, 255);
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1em;
+  font-weight: 500;
+  transition-duration: .3s;
+}
+
+.add-button:hover {
+  width: 100px;
+  transition-duration: .3s;
+}
+
+.add-button:hover .sign {
+  width: 30%;
+  transition-duration: .3s;
+  padding-left: 15px;
+}
+
+.add-button:hover .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  padding-right: 15px;
+}
+
+.add-button:active {
+  transform: translate(2px, 2px);
+}
+
+.filter {
+  border: 2px solid #603056;
+  border-radius: 25px;
+  background: rgba(0, 0, 0, 0);
+  padding: 10px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.filter.active {
+  background: rgba(128, 128, 128, 0.5);
+}
+
+.delete-all {
+  border: #00000000;
+  background: rgba(0, 0, 0, 0);
+  padding: 20px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.to-do-item {
+  display: flex;
+  align-items: center;
+  border: 2px solid #6E345C;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  color: #ffffff;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.to-do-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.to-do-item span {
+  color: #ffffff;
+}
+
+.boton-completar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: hsla(0, 0%, 51%, 0.153);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 10px;
+  position: relative;
+}
+
+.boton-completar span {
+  position: absolute;
+  color: white;
+  font-size: 0.8em;
+  z-index: 1;
+}
+
+.botones-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.boton-eliminar {
+  background: none;
+  border: none;
+  color: rgb(128, 128, 128);
+  font-size: 1.5em;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  transition: color 0.3s;
+}
+
+.boton-eliminar:hover {
+  color: #ff0000;
+}
+
+.boton-editar {
+  background: none;
+  border: none;
+  color: gray;
+  font-size: 1.5em;
+  cursor: pointer;
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s;
+}
+
+.boton-editar:hover {
+  color: #00ff44;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.boton-guardar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #4caf50; /* Color verde */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.boton-guardar:hover {
+  background-color: #45a049; /* Color verde más oscuro al pasar el mouse */
+}
+
+/* Estilo para el contenedor de edición de tareas */
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #6E345C; /* Borde del contenedor */
+  border-radius: 10px; /* Esquinas redondeadas */
+  backdrop-filter: blur(15px); /* Fondo translúcido */
+  padding: 10px; /* Espaciado interno */
+  margin-bottom: 10px; /* Espaciado inferior */
+}
+
+/* Estilo para los inputs dentro del contenedor de edición */
+.edit-input {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 2px solid #6E345C; /* Borde de los inputs */
+  border-radius: 10px; /* Esquinas redondeadas */
+  backdrop-filter: blur(15px); /* Fondo translúcido */
+  background: transparent; /* Fondo transparente */
+  padding: 10px; /* Espaciado interno */
+  color: #ffffff; /* Color del texto */
+  outline: none; /* Sin contorno al seleccionar */
+}
+
+/* Estilo para el select dentro del contenedor de edición */
+.edit-select {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 2px solid #6E345C; /* Borde del select */
+  border-radius: 10px; /* Esquinas redondeadas */
+  backdrop-filter: blur(15px); /* Fondo translúcido */
+  background: transparent; /* Fondo transparente */
+  padding: 10px; /* Espaciado interno */
+  color: #ffffff; /* Color del texto */
+  outline: none; /* Sin contorno al seleccionar */
+}
+
+/* Estilo para la lista desplegable de tag-input y custom-tag-input */
+.tag-input option,
+.custom-tag-input option {
+  color: black; /* Texto de la lista desplegable en negro */
+}
